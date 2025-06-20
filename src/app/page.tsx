@@ -23,7 +23,7 @@ export default function Home() {
         <section className="w-full">
           <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-6 tracking-tight drop-shadow">🔥 Hot Vouchers</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            {vouchers.map((voucher, i) => (
+            {vouchers.map((voucher) => (
               <div className="transition-transform duration-200 hover:scale-105 hover:z-10" key={voucher.code}>
                 <VoucherCard voucher={voucher} />
               </div>
