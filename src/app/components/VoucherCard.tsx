@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Voucher } from "../vouchers";
-import { useUserStore } from "../store";
+import { useUserStore, useHydration } from "../store";
 
 interface VoucherCardProps {
   voucher: Voucher;
@@ -11,6 +11,7 @@ const VoucherCard: React.FC<VoucherCardProps> = ({ voucher }) => {
   const { points, deductPoints } = useUserStore();
   const [showModal, setShowModal] = useState(false);
   const [error, setError] = useState("");
+  const isHydrated = useHydration();
 
   const handleRedeem = () => {
     if (points >= voucher.cost) {
@@ -21,6 +22,25 @@ const VoucherCard: React.FC<VoucherCardProps> = ({ voucher }) => {
       setError("Not enough points to redeem this voucher.");
     }
   };
+
+  // Show skeleton while hydrating
+  if (!isHydrated) {
+    return (
+      <div className="relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-2xl p-6 flex flex-col items-center transition-all duration-200 hover:border-pink-400 hover:shadow-pink-400/40 group">
+        <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gradient-to-tr from-yellow-400 via-pink-400 to-purple-500 rounded-full p-2 shadow-lg animate-fade-in">
+          <svg width="36" height="36" fill="none" viewBox="0 0 24 24"><path fill="#fff" d="M17.5 2a2.5 2.5 0 0 1 2.45 2.98l.01.01a2.5 2.5 0 0 1-.73 4.9l-.01.01a2.5 2.5 0 0 1-4.9.73l-.01-.01A2.5 2.5 0 0 1 7.5 8.5l-.01-.01A2.5 2.5 0 0 1 2 6a2.5 2.5 0 0 1 2.98-2.45l.01-.01A2.5 2.5 0 0 1 10 2.5l.01.01A2.5 2.5 0 0 1 17.5 2Z"/></svg>
+        </div>
+        <h3 className="text-xl font-extrabold mb-2 text-center text-white drop-shadow mt-6">{voucher.title}</h3>
+        <p className="mb-4 text-pink-200 text-lg font-semibold">Cost: <span className="font-bold text-yellow-300">{voucher.cost} pts</span></p>
+        <button
+          className="bg-gradient-to-r from-pink-500 to-yellow-400 text-white font-bold px-6 py-2 rounded-full shadow-lg hover:from-yellow-400 hover:to-pink-500 hover:scale-105 transition-all text-lg mb-2 mt-2 border-2 border-white/20"
+          disabled
+        >
+          Loading...
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-2xl p-6 flex flex-col items-center transition-all duration-200 hover:border-pink-400 hover:shadow-pink-400/40 group">

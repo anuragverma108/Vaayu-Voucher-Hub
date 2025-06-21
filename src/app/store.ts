@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { useEffect, useState } from 'react';
 
 interface UserState {
   name: string;
@@ -12,4 +13,15 @@ export const useUserStore = create<UserState>((set) => ({
   points: 1000,
   setName: (name) => set({ name }),
   deductPoints: (amount) => set((state) => ({ points: state.points - amount })),
-})); 
+}));
+
+// Custom hook to handle hydration
+export const useHydration = () => {
+  const [isHydrated, setIsHydrated] = useState(false);
+
+  useEffect(() => {
+    setIsHydrated(true);
+  }, []);
+
+  return isHydrated;
+}; 

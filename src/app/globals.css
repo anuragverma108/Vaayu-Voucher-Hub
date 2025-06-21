@@ -58,3 +58,16 @@ html, body {
   background: linear-gradient(135deg, #f472b6 0%, #facc15 100%);
   border-radius: 8px;
 }
+
+/* Animated gradient background */
+@keyframes animated-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
