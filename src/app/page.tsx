@@ -4,7 +4,7 @@ import { vouchers } from "./vouchers";
 import { useUserStore, useHydration } from "./store";
 
 export default function Home() {
-  const { name, points } = useUserStore();
+  const { points } = useUserStore();
   const isHydrated = useHydration();
 
   // Show loading state or skeleton while hydrating
