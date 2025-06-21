@@ -10,21 +10,23 @@ export default function Home() {
   // Show loading state or skeleton while hydrating
   if (!isHydrated) {
     return (
-      <main className="min-h-screen w-full bg-gradient-to-br from-blue-900 via-purple-800 to-pink-600 flex flex-col items-center justify-center py-10 px-2">
+      <main className="min-h-screen w-full bg-gradient-to-br from-slate-900 via-gray-900 to-slate-900 flex flex-col items-center justify-center py-10 px-2" style={{ backgroundSize: '200% 200%', animation: 'animated-gradient 10s ease infinite' }}>
         <div className="max-w-3xl w-full flex flex-col items-center gap-10">
           <header className="w-full flex flex-col items-center">
-            <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl shadow-xl px-8 py-6 flex flex-col items-center mb-6 animate-fade-in">
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-white drop-shadow mb-2 tracking-tight">Loading...</h1>
+            <h1 className="text-5xl sm:text-6xl font-thin text-white tracking-wider mb-4">
+              <span className="bg-gradient-to-r from-sky-400 to-blue-500 text-transparent bg-clip-text">Voucher</span> Hub
+            </h1>
+            <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700 rounded-2xl shadow-2xl px-8 py-6 flex flex-col items-center mb-6 animate-fade-in">
               <div className="flex items-center gap-2 mt-2">
-                <span className="text-lg font-semibold text-white/80">Your Points</span>
-                <span className="bg-gradient-to-r from-yellow-400 to-pink-400 text-white font-bold text-2xl px-4 py-1 rounded-full shadow-lg border border-white/20 ml-2">
+                <span className="text-lg font-light text-slate-300">Your Points</span>
+                <span className="bg-sky-500 text-white font-normal text-2xl px-4 py-1 rounded-full shadow-lg border border-sky-400 ml-2">
                   ...
                 </span>
               </div>
             </div>
           </header>
           <section className="w-full">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-6 tracking-tight drop-shadow">🔥 Hot Vouchers</h2>
+            <h2 className="text-2xl sm:text-3xl font-normal text-white text-center mb-6 tracking-tight drop-shadow">✨ Featured Vouchers</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {vouchers.map((voucher) => (
                 <div className="transition-transform duration-200 hover:scale-105 hover:z-10" key={voucher.code}>
@@ -39,21 +41,23 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen w-full bg-gradient-to-br from-blue-900 via-purple-800 to-pink-600 flex flex-col items-center justify-center py-10 px-2" style={{ backgroundSize: '200% 200%', animation: 'animated-gradient 10s ease infinite' }}>
+    <main className="min-h-screen w-full bg-gradient-to-br from-slate-900 via-gray-900 to-slate-900 flex flex-col items-center justify-center py-10 px-2" style={{ backgroundSize: '200% 200%', animation: 'animated-gradient 10s ease infinite' }}>
       <div className="max-w-3xl w-full flex flex-col items-center gap-10">
         <header className="w-full flex flex-col items-center">
-          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl shadow-xl px-8 py-6 flex flex-col items-center mb-6 animate-fade-in">
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-white drop-shadow mb-2 tracking-tight">Hey, {name}!</h1>
+          <h1 className="text-5xl sm:text-6xl font-thin text-white tracking-wider mb-4">
+            <span className="bg-gradient-to-r from-sky-400 to-blue-500 text-transparent bg-clip-text">Voucher</span> Hub
+          </h1>
+          <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700 rounded-2xl shadow-2xl px-8 py-6 flex flex-col items-center mb-6 animate-fade-in">
             <div className="flex items-center gap-2 mt-2">
-              <span className="text-lg font-semibold text-white/80">Your Points</span>
-              <span className="bg-gradient-to-r from-yellow-400 to-pink-400 text-white font-bold text-2xl px-4 py-1 rounded-full shadow-lg border border-white/20 ml-2 animate-bounce">
+              <span className="text-lg font-light text-slate-300">Your Points</span>
+              <span className="bg-sky-500 text-white font-normal text-2xl px-4 py-1 rounded-full shadow-lg border border-sky-400 ml-2">
                 {points}
               </span>
             </div>
           </div>
         </header>
         <section className="w-full">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-6 tracking-tight drop-shadow">🔥 Hot Vouchers</h2>
+          <h2 className="text-2xl sm:text-3xl font-normal text-white text-center mb-6 tracking-tight drop-shadow">✨ Featured Vouchers</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {vouchers.map((voucher) => (
               <div className="transition-transform duration-200 hover:scale-105 hover:z-10" key={voucher.code}>

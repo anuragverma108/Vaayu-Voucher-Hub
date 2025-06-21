@@ -26,14 +26,16 @@ const VoucherCard: React.FC<VoucherCardProps> = ({ voucher }) => {
   // Show skeleton while hydrating
   if (!isHydrated) {
     return (
-      <div className="relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-2xl p-6 flex flex-col items-center transition-all duration-200 hover:border-pink-400 hover:shadow-pink-400/40 group">
-        <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gradient-to-tr from-yellow-400 via-pink-400 to-purple-500 rounded-full p-2 shadow-lg animate-fade-in">
-          <svg width="36" height="36" fill="none" viewBox="0 0 24 24"><path fill="#fff" d="M17.5 2a2.5 2.5 0 0 1 2.45 2.98l.01.01a2.5 2.5 0 0 1-.73 4.9l-.01.01a2.5 2.5 0 0 1-4.9.73l-.01-.01A2.5 2.5 0 0 1 7.5 8.5l-.01-.01A2.5 2.5 0 0 1 2 6a2.5 2.5 0 0 1 2.98-2.45l.01-.01A2.5 2.5 0 0 1 10 2.5l.01.01A2.5 2.5 0 0 1 17.5 2Z"/></svg>
+      <div className="relative bg-slate-800/80 backdrop-blur-lg border border-slate-700 rounded-2xl shadow-xl p-6 flex flex-col items-center transition-all duration-200 group">
+        <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-sky-500 rounded-full p-2 shadow-lg">
+          <svg width="36" height="36" fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35C11.96 2.54 11.05 2 10 2c-1.66 0-3 1.34-3 3 0 .35.07.69.18 1H5c-1.11 0-1.99.89-1.99 2L3 19c0 1.11.89 2 2 2h14c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM10 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm10 15H4V8h16v11z"/>
+          </svg>
         </div>
-        <h3 className="text-xl font-extrabold mb-2 text-center text-white drop-shadow mt-6">{voucher.title}</h3>
-        <p className="mb-4 text-pink-200 text-lg font-semibold">Cost: <span className="font-bold text-yellow-300">{voucher.cost} pts</span></p>
+        <h3 className="text-xl font-normal mb-2 text-center text-white mt-6">{voucher.title}</h3>
+        <p className="mb-4 text-slate-300 text-lg">Cost: <span className="font-normal text-sky-400">{voucher.cost} pts</span></p>
         <button
-          className="bg-gradient-to-r from-pink-500 to-yellow-400 text-white font-bold px-6 py-2 rounded-full shadow-lg hover:from-yellow-400 hover:to-pink-500 hover:scale-105 transition-all text-lg mb-2 mt-2 border-2 border-white/20"
+          className="bg-slate-700 text-white/50 font-normal px-6 py-2 rounded-full shadow-lg text-lg mb-2 mt-2 border-2 border-slate-600"
           disabled
         >
           Loading...
@@ -43,29 +45,31 @@ const VoucherCard: React.FC<VoucherCardProps> = ({ voucher }) => {
   }
 
   return (
-    <div className="relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-2xl p-6 flex flex-col items-center transition-all duration-200 hover:border-pink-400 hover:shadow-pink-400/40 group">
-      <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gradient-to-tr from-yellow-400 via-pink-400 to-purple-500 rounded-full p-2 shadow-lg animate-fade-in">
-        <svg width="36" height="36" fill="none" viewBox="0 0 24 24"><path fill="#fff" d="M17.5 2a2.5 2.5 0 0 1 2.45 2.98l.01.01a2.5 2.5 0 0 1-.73 4.9l-.01.01a2.5 2.5 0 0 1-4.9.73l-.01-.01A2.5 2.5 0 0 1 7.5 8.5l-.01-.01A2.5 2.5 0 0 1 2 6a2.5 2.5 0 0 1 2.98-2.45l.01-.01A2.5 2.5 0 0 1 10 2.5l.01.01A2.5 2.5 0 0 1 17.5 2Z"/></svg>
+    <div className="relative bg-slate-800/80 backdrop-blur-lg border border-slate-700 rounded-2xl shadow-xl p-6 flex flex-col items-center transition-all duration-200 group hover:border-sky-500 hover:shadow-sky-500/20">
+      <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-sky-500 rounded-full p-2 shadow-lg">
+        <svg width="36" height="36" fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35C11.96 2.54 11.05 2 10 2c-1.66 0-3 1.34-3 3 0 .35.07.69.18 1H5c-1.11 0-1.99.89-1.99 2L3 19c0 1.11.89 2 2 2h14c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM10 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm10 15H4V8h16v11z"/>
+          </svg>
       </div>
-      <h3 className="text-xl font-extrabold mb-2 text-center text-white drop-shadow mt-6">{voucher.title}</h3>
-      <p className="mb-4 text-pink-200 text-lg font-semibold">Cost: <span className="font-bold text-yellow-300">{voucher.cost} pts</span></p>
+      <h3 className="text-xl font-normal mb-2 text-center text-white mt-6">{voucher.title}</h3>
+      <p className="mb-4 text-slate-300 text-lg">Cost: <span className="font-normal text-sky-400">{voucher.cost} pts</span></p>
       <button
-        className="bg-gradient-to-r from-pink-500 to-yellow-400 text-white font-bold px-6 py-2 rounded-full shadow-lg hover:from-yellow-400 hover:to-pink-500 hover:scale-105 transition-all text-lg mb-2 mt-2 border-2 border-white/20"
+        className="bg-sky-600 text-white font-normal px-6 py-2 rounded-full shadow-lg hover:bg-sky-700 transition-all text-lg mb-2 mt-2 border-2 border-sky-500"
         onClick={handleRedeem}
       >
         Redeem
       </button>
-      {error && <p className="text-red-300 text-sm mt-1 font-semibold">{error}</p>}
+      {error && <p className="text-red-400 text-sm mt-1 font-normal">{error}</p>}
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-50 animate-fade-in">
-          <div className="bg-white/90 p-8 rounded-2xl shadow-2xl flex flex-col items-center border-2 border-pink-400 animate-pop-in">
-            <h4 className="text-2xl font-extrabold mb-2 text-pink-600 drop-shadow">Voucher Redeemed!</h4>
-            <p className="mb-2 text-lg text-gray-700">Your code:</p>
-            <div className="bg-gradient-to-r from-yellow-200 to-pink-200 px-6 py-3 rounded font-mono text-xl text-pink-700 mb-4 border border-pink-300 shadow-inner">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50 animate-fade-in">
+          <div className="bg-slate-800 p-8 rounded-2xl shadow-2xl flex flex-col items-center border-2 border-sky-500 animate-pop-in max-w-sm mx-auto">
+            <h4 className="text-2xl font-normal mb-2 text-sky-400">Voucher Redeemed!</h4>
+            <p className="mb-4 text-lg text-slate-300">Your code:</p>
+            <div className="bg-slate-700 px-6 py-3 rounded font-mono text-xl text-sky-300 mb-6 border border-slate-600 shadow-inner w-full text-center">
               {voucher.code}
             </div>
             <button
-              className="bg-pink-500 text-white px-5 py-2 rounded-full font-bold shadow hover:bg-pink-600 transition"
+              className="bg-sky-600 text-white px-6 py-2 rounded-full font-normal shadow hover:bg-sky-700 transition w-full"
               onClick={() => setShowModal(false)}
             >
               Close
