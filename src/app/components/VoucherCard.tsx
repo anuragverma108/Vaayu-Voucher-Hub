@@ -38,6 +38,7 @@ const VoucherCard: React.FC<VoucherCardProps> = ({ voucher }) => {
           className="bg-slate-700 text-white/50 font-normal px-6 py-2 rounded-full shadow-lg text-lg mb-2 mt-2 border-2 border-slate-600"
           disabled
         >
+          <hr/>
           Loading...
         </button>
       </div>
