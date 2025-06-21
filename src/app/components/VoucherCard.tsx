@@ -46,7 +46,7 @@ const VoucherCard: React.FC<VoucherCardProps> = ({ voucher }) => {
   }
 
   return (
-    <div className="relative bg-slate-800/80 backdrop-blur-lg border border-slate-700 rounded-2xl shadow-xl p-6 flex flex-col items-center transition-all duration-200 group hover:border-sky-500 hover:shadow-sky-500/20">
+    <div className="relative bg-slate-800/80 backdrop-blur-lg border border-slate-700 rounded-2xl shadow-xl p-6 flex flex-col items-center transition-all duration-300 group hover:border-sky-500 hover:shadow-sky-500/20 hover:-translate-y-2 hover:z-10">
       <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-sky-500 rounded-full p-2 shadow-lg">
         <svg width="36" height="36" fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35C11.96 2.54 11.05 2 10 2c-1.66 0-3 1.34-3 3 0 .35.07.69.18 1H5c-1.11 0-1.99.89-1.99 2L3 19c0 1.11.89 2 2 2h14c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM10 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm10 15H4V8h16v11z"/>
